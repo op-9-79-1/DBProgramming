@@ -1,0 +1,10 @@
+C:\Users\opera\source\repos\StudentManagement\bin\Debug\StudentManagement.exe.config
+C:\Users\opera\source\repos\StudentManagement\bin\Debug\StudentManagement.exe
+C:\Users\opera\source\repos\StudentManagement\bin\Debug\StudentManagement.pdb
+C:\Users\opera\source\repos\StudentManagement\obj\Debug\StudentManagement.csprojAssemblyReference.cache
+C:\Users\opera\source\repos\StudentManagement\obj\Debug\StudentManagement.Form1.resources
+C:\Users\opera\source\repos\StudentManagement\obj\Debug\StudentManagement.Properties.Resources.resources
+C:\Users\opera\source\repos\StudentManagement\obj\Debug\StudentManagement.csproj.GenerateResource.cache
+C:\Users\opera\source\repos\StudentManagement\obj\Debug\StudentManagement.csproj.CoreCompileInputs.cache
+C:\Users\opera\source\repos\StudentManagement\obj\Debug\StudentManagement.exe
+C:\Users\opera\source\repos\StudentManagement\obj\Debug\StudentManagement.pdb
