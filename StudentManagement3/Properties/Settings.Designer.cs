@@ -46,5 +46,17 @@ namespace StudentManagement3.Properties {
                 this["check2ch"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        public int index_set {
+            get {
+                return ((int)(this["index_set"]));
+            }
+            set {
+                this["index_set"] = value;
+            }
+        }
     }
 }

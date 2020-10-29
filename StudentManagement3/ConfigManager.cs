@@ -25,7 +25,9 @@ namespace StudentManagement3
 
         public int GetRecentlyUsedListIdx()
         {
-            return 1;
+            //int index = Properties.Settings.Default.index_set;
+            int index = 3;
+            return index;
         }
     }
 }

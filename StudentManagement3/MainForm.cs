@@ -1,20 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Bcpg.OpenPgp;
 
 namespace StudentManagement3
 {
 	public partial class MainForm : Form
 	{
 		string strConn = "Server=49.50.174.201;Database=s5414441;Uid=s5414441;Pwd=s5414441;Charset=utf8"; //db 설정
+
 
 		public MainForm()
 		{
@@ -23,7 +16,7 @@ namespace StudentManagement3
 		}
 
 		private void isChecked()
-			
+
 		{
 			if (checkBox1.Checked) // 체크되었을 경우 true
 			{
@@ -33,6 +26,7 @@ namespace StudentManagement3
 			if (checkBox2.Checked)
 			{
 				loadmajorlist();
+				RecentMajor();
 			}
 		}
 
@@ -104,9 +98,9 @@ namespace StudentManagement3
 
 		private void buttonStudent1Save_Click(object sender, EventArgs e)
 		{
-				DBManager.GetInstance().Insert_A_Update("UPDATE student SET name = '" + textBoxStudentName1.Text + "' WHERE id = 1");
-				DBManager.GetInstance().Insert_A_Update("UPDATE student SET stn = '" + textBoxStudentNum1.Text + "' WHERE id = 1");
-				DBManager.GetInstance().Insert_A_Update("UPDATE student SET gender = '" + comboBoxStudentGender1.SelectedIndex + "' WHERE id = 1");
+			DBManager.GetInstance().Insert_A_Update("UPDATE student SET name = '" + textBoxStudentName1.Text + "' WHERE id = 1");
+			DBManager.GetInstance().Insert_A_Update("UPDATE student SET stn = '" + textBoxStudentNum1.Text + "' WHERE id = 1");
+			DBManager.GetInstance().Insert_A_Update("UPDATE student SET gender = '" + comboBoxStudentGender1.SelectedIndex + "' WHERE id = 1");
 		}
 
 		private void buttonStudent2Save_Click(object sender, EventArgs e)
@@ -177,16 +171,19 @@ namespace StudentManagement3
 		private void listBoxmajor_MouseDoubleClick(object sender, MouseEventArgs e)
 		{
 			int count = 0;
+			Properties.Settings.Default.index_set = listBoxmajor.SelectedIndex;
+			Properties.Settings.Default.Save();
 
 			if (listBoxmajor.SelectedItems.Count == 1)
 			{
 				String major = listBoxmajor.SelectedItem.ToString();
 
+				
 				using (MySqlConnection conn = new MySqlConnection(strConn))
 				{
 					conn.Open();
 
-					string query = "select * from student WHERE major = '" + major + "'" ; // 모든 데이터 저장
+					string query = "select * from student WHERE major = '" + major + "'"; // 모든 데이터 저장
 					MySqlCommand cmd = new MySqlCommand(query, conn);
 					MySqlDataReader rdr = cmd.ExecuteReader(); // 저장된 데이터 읽기
 
@@ -224,6 +221,11 @@ namespace StudentManagement3
 					rdr.Close();
 				}
 			}
+		}
+		private void RecentMajor()
+		{
+			//int index = ConfigManager.GetInstance().GetRecentlyUsedListIdx();
+			listBoxmajor.SetSelected(3, true);
 		}
 	}
 }
