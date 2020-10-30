@@ -7,6 +7,9 @@ namespace StudentManagement3
 	public partial class MainForm : Form
 	{
 		string strConn = "Server=49.50.174.201;Database=s5414441;Uid=s5414441;Pwd=s5414441;Charset=utf8"; //db 설정
+		int student1_id = 0;
+		int student2_id = 0;
+		int student3_id = 0;
 
 
 		public MainForm()
@@ -98,30 +101,33 @@ namespace StudentManagement3
 
 		private void buttonStudent1Save_Click(object sender, EventArgs e)
 		{
-			DBManager.GetInstance().Insert_A_Update("UPDATE student SET name = '" + textBoxStudentName1.Text + "' WHERE id = 1");
-			DBManager.GetInstance().Insert_A_Update("UPDATE student SET stn = '" + textBoxStudentNum1.Text + "' WHERE id = 1");
-			DBManager.GetInstance().Insert_A_Update("UPDATE student SET gender = '" + comboBoxStudentGender1.SelectedIndex + "' WHERE id = 1");
+			DBManager.GetInstance().Insert_A_Update("UPDATE student SET name = '" + textBoxStudentName1.Text + "' WHERE id = " + (student1_id == 0 ? "1" : student1_id.ToString()));
+			DBManager.GetInstance().Insert_A_Update("UPDATE student SET stn = '" + textBoxStudentNum1.Text + "' WHERE id = " + (student1_id == 0 ? "1" : student1_id.ToString()));
+			DBManager.GetInstance().Insert_A_Update("UPDATE student SET gender = '" + comboBoxStudentGender1.SelectedIndex + "' WHERE id = " + (student1_id == 0 ? "1" : student1_id.ToString()));
+			DBManager.GetInstance().Insert_A_Update("UPDATE student SET major = '" + listBoxmajor.SelectedItem.ToString() + "' WHERE id = " + (student1_id == 0 ? "1" : student1_id.ToString()));
 		}
 
 		private void buttonStudent2Save_Click(object sender, EventArgs e)
 		{
-			DBManager.GetInstance().Insert_A_Update("UPDATE student SET name = '" + textBoxStudentName2.Text + "' WHERE id = 1");
-			DBManager.GetInstance().Insert_A_Update("UPDATE student SET stn = '" + textBoxStudentNum2.Text + "' WHERE id = 1");
-			DBManager.GetInstance().Insert_A_Update("UPDATE student SET gender = '" + comboBoxStudentGender2.SelectedIndex + "' WHERE id = 1");
+			DBManager.GetInstance().Insert_A_Update("UPDATE student SET name = '" + textBoxStudentName2.Text + "' WHERE id = " + (student2_id == 0 ? "2" : student2_id.ToString()));
+			DBManager.GetInstance().Insert_A_Update("UPDATE student SET stn = '" + textBoxStudentNum2.Text + "' WHERE id = "  + (student2_id == 0 ? "2" : student2_id.ToString()));
+			DBManager.GetInstance().Insert_A_Update("UPDATE student SET gender = '" + comboBoxStudentGender2.SelectedIndex + "' WHERE id = " + (student2_id == 0 ? "2" : student2_id.ToString()));
+			DBManager.GetInstance().Insert_A_Update("UPDATE student SET major = '" + listBoxmajor.SelectedItem.ToString() + "' WHERE id = " + (student2_id == 0 ? "2" : student2_id.ToString()));
 		}
 
 		private void buttonStudent3Save_Click(object sender, EventArgs e)
 		{
-			DBManager.GetInstance().Insert_A_Update("UPDATE student SET name = '" + textBoxStudentName3.Text + "' WHERE id = 1");
-			DBManager.GetInstance().Insert_A_Update("UPDATE student SET stn = '" + textBoxStudentNum3.Text + "' WHERE id = 1");
-			DBManager.GetInstance().Insert_A_Update("UPDATE student SET gender = '" + comboBoxStudentGender3.SelectedIndex + "' WHERE id = 1");
+			DBManager.GetInstance().Insert_A_Update("UPDATE student SET name = '" + textBoxStudentName3.Text + "' WHERE id = " + (student3_id == 0 ? "3" : student3_id.ToString()));
+			DBManager.GetInstance().Insert_A_Update("UPDATE student SET stn = '" + textBoxStudentNum3.Text + "' WHERE id = " + (student3_id == 0 ? "3" : student3_id.ToString()));
+			DBManager.GetInstance().Insert_A_Update("UPDATE student SET gender = '" + comboBoxStudentGender3.SelectedIndex + "' WHERE id = " + (student3_id == 0 ? "3" : student3_id.ToString()));
+			DBManager.GetInstance().Insert_A_Update("UPDATE student SET major = '" + listBoxmajor.SelectedItem.ToString() + "' WHERE id = " + (student3_id == 0 ? "3" : student3_id.ToString()));
 		}
 
 		private void buttonStudentDel1_Click(object sender, EventArgs e)
 		{
-			DBManager.GetInstance().Insert_A_Update("DELETE FROM student WHERE id = 1");
-			DBManager.GetInstance().Insert_A_Update("INSERT INTO student(id) values ('1')");
-			DBManager.GetInstance().Insert_A_Update("UPDATE student SET gender = '0' WHERE id = 1");
+			DBManager.GetInstance().Insert_A_Update("DELETE FROM student WHERE id = " + (student1_id == 0 ? "1" : student1_id.ToString()));
+			DBManager.GetInstance().Insert_A_Update("INSERT INTO student(id) values ('" + (student1_id == 0 ? "1" : student1_id.ToString()) +"')");
+			DBManager.GetInstance().Insert_A_Update("UPDATE student SET gender = '0' WHERE id = " + (student1_id == 0 ? "1" : student1_id.ToString()));
 
 			Student1_Clear();
 		}
@@ -133,9 +139,9 @@ namespace StudentManagement3
 		}
 		private void buttonStudentDel2_Click(object sender, EventArgs e)
 		{
-			DBManager.GetInstance().Insert_A_Update("DELETE FROM student WHERE id = 2");
-			DBManager.GetInstance().Insert_A_Update("INSERT INTO student(id) values ('2')");
-			DBManager.GetInstance().Insert_A_Update("UPDATE student SET gender = '0' WHERE id = 2");
+			DBManager.GetInstance().Insert_A_Update("DELETE FROM student WHERE id = " + (student2_id == 0 ? "2" : student2_id.ToString()));
+			DBManager.GetInstance().Insert_A_Update("INSERT INTO student(id) values ('" + (student2_id == 0 ? "2" : student2_id.ToString()) + "')");
+			DBManager.GetInstance().Insert_A_Update("UPDATE student SET gender = '0' WHERE id = " + (student2_id == 0 ? "2" : student2_id.ToString()));
 
 			Student2_Clear();
 		}
@@ -149,9 +155,9 @@ namespace StudentManagement3
 
 		private void buttonStudentDel3_Click(object sender, EventArgs e)
 		{
-			DBManager.GetInstance().Insert_A_Update("DELETE FROM student WHERE id = 3");
-			DBManager.GetInstance().Insert_A_Update("INSERT INTO student(id) values ('3')");
-			DBManager.GetInstance().Insert_A_Update("UPDATE student SET gender = '3' WHERE id = 3");
+			DBManager.GetInstance().Insert_A_Update("DELETE FROM student WHERE id = " + (student3_id == 0 ? "3" : student3_id.ToString()));
+			DBManager.GetInstance().Insert_A_Update("INSERT INTO student(id) values ('" + (student3_id == 0 ? "3" : student3_id.ToString()) + "')");
+			DBManager.GetInstance().Insert_A_Update("UPDATE student SET gender = '3' WHERE id = " + (student3_id == 0 ? "3" : student3_id.ToString()));
 
 			Student3_Clear();
 		}
@@ -198,6 +204,7 @@ namespace StudentManagement3
 							textBoxStudentName1.Text = rdr["name"].ToString();
 							textBoxStudentNum1.Text = rdr["stn"].ToString();
 							comboBoxStudentGender1.SelectedIndex = Convert.ToInt32(rdr["gender"]);
+							student1_id = Convert.ToInt32(rdr["id"]);
 							count++;
 							continue;
 						}
@@ -207,6 +214,7 @@ namespace StudentManagement3
 							textBoxStudentName2.Text = rdr["name"].ToString();
 							textBoxStudentNum2.Text = rdr["stn"].ToString();
 							comboBoxStudentGender2.SelectedIndex = Convert.ToInt32(rdr["gender"]);
+							student2_id = Convert.ToInt32(rdr["id"]);
 							count++;
 							continue;
 						}
@@ -215,6 +223,7 @@ namespace StudentManagement3
 							textBoxStudentName3.Text = rdr["name"].ToString();
 							textBoxStudentNum3.Text = rdr["stn"].ToString();
 							comboBoxStudentGender3.SelectedIndex = Convert.ToInt32(rdr["gender"]);
+							student3_id = Convert.ToInt32(rdr["id"]);
 							break;
 						}
 					}
