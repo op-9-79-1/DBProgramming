@@ -1,0 +1,9 @@
+D:\capstone\DBprogramming\test\bin\Debug\test.exe.config
+D:\capstone\DBprogramming\test\bin\Debug\test.exe
+D:\capstone\DBprogramming\test\bin\Debug\test.pdb
+D:\capstone\DBprogramming\test\obj\Debug\test.csprojAssemblyReference.cache
+D:\capstone\DBprogramming\test\obj\Debug\test.Properties.Resources.resources
+D:\capstone\DBprogramming\test\obj\Debug\test.csproj.GenerateResource.cache
+D:\capstone\DBprogramming\test\obj\Debug\test.csproj.CoreCompileInputs.cache
+D:\capstone\DBprogramming\test\obj\Debug\test.exe
+D:\capstone\DBprogramming\test\obj\Debug\test.pdb
