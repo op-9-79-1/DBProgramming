@@ -447,5 +447,19 @@ namespace coffershop1
 			adapter.UpdateCommand = builder.GetUpdateCommand();
 			adapter.Update(table);
 		}
+		public DataSet order_select_time(string id, string day, string time)
+		{
+
+			MySqlConnection conn = new MySqlConnection(connection_string);
+
+			update_query = @"Select sid as '번호', order_time as '주문 시간', (select name from coffee where id = coffee_sid)as '커피 종류', memo as '메모' from order_list where order_time LIKE '%#day%' AND user_sid = '#id' AND order_time LIKE '%#time'";
+			update_query = update_query.Replace("#day", day);
+			update_query = update_query.Replace("#id", id);
+			update_query = update_query.Replace("#time", time);
+			MySqlDataAdapter adapter = new MySqlDataAdapter(update_query, conn);
+			DataSet ds = new DataSet();
+			adapter.Fill(ds);
+			return ds;
+		}
 	}
 }

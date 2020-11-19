@@ -80,5 +80,11 @@ namespace coffershop1
 		{
 			show_Log();
 		}
+
+		private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+		{
+			ds = DBManager.GetInstance().order_select_time(id, time_value, dateTimePicker1.Value.ToString("HH시 mm분"));
+			dataGridView_Menu.DataSource = ds.Tables[0];
+		}
 	}
 }

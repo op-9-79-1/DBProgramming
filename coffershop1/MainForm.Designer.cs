@@ -31,8 +31,9 @@
 			this.labelmaster = new System.Windows.Forms.Label();
 			this.buttonLogout = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.button_insert_coffee = new System.Windows.Forms.Button();
-			this.listBox_coffee = new System.Windows.Forms.ListBox();
+			this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+			this.button_order_search = new System.Windows.Forms.Button();
 			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
 			this.groupBox_master = new System.Windows.Forms.GroupBox();
 			this.dataGridView_master = new System.Windows.Forms.DataGridView();
@@ -43,7 +44,7 @@
 			this.관ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.사용자로그ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.메뉴관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.button_order_search = new System.Windows.Forms.Button();
+			this.button_order = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView_master)).BeginInit();
 			this.menuStrip1.SuspendLayout();
@@ -70,9 +71,10 @@
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.button_order);
+			this.groupBox1.Controls.Add(this.flowLayoutPanel2);
+			this.groupBox1.Controls.Add(this.flowLayoutPanel1);
 			this.groupBox1.Controls.Add(this.button_order_search);
-			this.groupBox1.Controls.Add(this.button_insert_coffee);
-			this.groupBox1.Controls.Add(this.listBox_coffee);
 			this.groupBox1.Controls.Add(this.dateTimePicker1);
 			this.groupBox1.Location = new System.Drawing.Point(47, 79);
 			this.groupBox1.Name = "groupBox1";
@@ -81,24 +83,29 @@
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "캐셔용 화면";
 			// 
-			// button_insert_coffee
+			// flowLayoutPanel2
 			// 
-			this.button_insert_coffee.Location = new System.Drawing.Point(165, 90);
-			this.button_insert_coffee.Name = "button_insert_coffee";
-			this.button_insert_coffee.Size = new System.Drawing.Size(75, 23);
-			this.button_insert_coffee.TabIndex = 6;
-			this.button_insert_coffee.Text = "추가하기";
-			this.button_insert_coffee.UseVisualStyleBackColor = true;
-			this.button_insert_coffee.Click += new System.EventHandler(this.button_insert_coffee_Click);
+			this.flowLayoutPanel2.Location = new System.Drawing.Point(344, 47);
+			this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+			this.flowLayoutPanel2.Size = new System.Drawing.Size(347, 122);
+			this.flowLayoutPanel2.TabIndex = 10;
 			// 
-			// listBox_coffee
+			// flowLayoutPanel1
 			// 
-			this.listBox_coffee.FormattingEnabled = true;
-			this.listBox_coffee.ItemHeight = 12;
-			this.listBox_coffee.Location = new System.Drawing.Point(39, 48);
-			this.listBox_coffee.Name = "listBox_coffee";
-			this.listBox_coffee.Size = new System.Drawing.Size(120, 112);
-			this.listBox_coffee.TabIndex = 5;
+			this.flowLayoutPanel1.Location = new System.Drawing.Point(18, 47);
+			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+			this.flowLayoutPanel1.Size = new System.Drawing.Size(320, 122);
+			this.flowLayoutPanel1.TabIndex = 9;
+			// 
+			// button_order_search
+			// 
+			this.button_order_search.Location = new System.Drawing.Point(224, 18);
+			this.button_order_search.Name = "button_order_search";
+			this.button_order_search.Size = new System.Drawing.Size(75, 23);
+			this.button_order_search.TabIndex = 7;
+			this.button_order_search.Text = "주문 검색";
+			this.button_order_search.UseVisualStyleBackColor = true;
+			this.button_order_search.Click += new System.EventHandler(this.button_order_search_Click);
 			// 
 			// dateTimePicker1
 			// 
@@ -188,15 +195,15 @@
 			this.메뉴관리ToolStripMenuItem.Text = "메뉴관리";
 			this.메뉴관리ToolStripMenuItem.Click += new System.EventHandler(this.메뉴관리ToolStripMenuItem_Click);
 			// 
-			// button_order_search
+			// button_order
 			// 
-			this.button_order_search.Location = new System.Drawing.Point(224, 18);
-			this.button_order_search.Name = "button_order_search";
-			this.button_order_search.Size = new System.Drawing.Size(75, 23);
-			this.button_order_search.TabIndex = 7;
-			this.button_order_search.Text = "주문 검색";
-			this.button_order_search.UseVisualStyleBackColor = true;
-			this.button_order_search.Click += new System.EventHandler(this.button_order_search_Click);
+			this.button_order.Location = new System.Drawing.Point(616, 18);
+			this.button_order.Name = "button_order";
+			this.button_order.Size = new System.Drawing.Size(75, 23);
+			this.button_order.TabIndex = 11;
+			this.button_order.Text = "주문하기";
+			this.button_order.UseVisualStyleBackColor = true;
+			this.button_order.Click += new System.EventHandler(this.button_order_Click);
 			// 
 			// MainForm
 			// 
@@ -232,9 +239,10 @@
 		private System.Windows.Forms.ToolStripMenuItem 관ToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem 사용자로그ToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem 메뉴관리ToolStripMenuItem;
-		private System.Windows.Forms.ListBox listBox_coffee;
-		private System.Windows.Forms.Button button_insert_coffee;
 		private System.Windows.Forms.Button button_order_search;
+		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+		private System.Windows.Forms.Button button_order;
 	}
 }
 

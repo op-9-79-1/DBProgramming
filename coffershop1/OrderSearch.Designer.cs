@@ -29,11 +29,12 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderSearch));
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.button_Refresh = new System.Windows.Forms.Button();
 			this.button_revise = new System.Windows.Forms.Button();
 			this.dataGridView_Menu = new System.Windows.Forms.DataGridView();
 			this.button_del = new System.Windows.Forms.Button();
+			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView_Menu)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -61,8 +62,8 @@
 			// 
 			// dataGridView_Menu
 			// 
-			dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-			this.dataGridView_Menu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+			this.dataGridView_Menu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.dataGridView_Menu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -85,11 +86,23 @@
 			this.button_del.UseVisualStyleBackColor = false;
 			this.button_del.Click += new System.EventHandler(this.button_del_Click);
 			// 
+			// dateTimePicker1
+			// 
+			this.dateTimePicker1.CustomFormat = "HH시 mm분";
+			this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.dateTimePicker1.Location = new System.Drawing.Point(13, 68);
+			this.dateTimePicker1.Name = "dateTimePicker1";
+			this.dateTimePicker1.ShowUpDown = true;
+			this.dateTimePicker1.Size = new System.Drawing.Size(200, 21);
+			this.dateTimePicker1.TabIndex = 13;
+			this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+			// 
 			// OrderSearch
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.dateTimePicker1);
 			this.Controls.Add(this.button_del);
 			this.Controls.Add(this.button_Refresh);
 			this.Controls.Add(this.button_revise);
@@ -107,5 +120,6 @@
 		private System.Windows.Forms.Button button_revise;
 		private System.Windows.Forms.DataGridView dataGridView_Menu;
 		private System.Windows.Forms.Button button_del;
+		private System.Windows.Forms.DateTimePicker dateTimePicker1;
 	}
 }
