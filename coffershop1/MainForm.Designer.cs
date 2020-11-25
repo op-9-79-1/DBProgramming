@@ -31,6 +31,7 @@
 			this.labelmaster = new System.Windows.Forms.Label();
 			this.buttonLogout = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.button_order = new System.Windows.Forms.Button();
 			this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
 			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
 			this.button_order_search = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
 			this.관ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.사용자로그ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.메뉴관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.button_order = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView_master)).BeginInit();
 			this.menuStrip1.SuspendLayout();
@@ -76,25 +76,35 @@
 			this.groupBox1.Controls.Add(this.flowLayoutPanel1);
 			this.groupBox1.Controls.Add(this.button_order_search);
 			this.groupBox1.Controls.Add(this.dateTimePicker1);
-			this.groupBox1.Location = new System.Drawing.Point(47, 79);
+			this.groupBox1.Location = new System.Drawing.Point(47, 53);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(712, 175);
+			this.groupBox1.Size = new System.Drawing.Size(712, 211);
 			this.groupBox1.TabIndex = 6;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "캐셔용 화면";
+			// 
+			// button_order
+			// 
+			this.button_order.Location = new System.Drawing.Point(616, 18);
+			this.button_order.Name = "button_order";
+			this.button_order.Size = new System.Drawing.Size(75, 23);
+			this.button_order.TabIndex = 11;
+			this.button_order.Text = "주문하기";
+			this.button_order.UseVisualStyleBackColor = true;
+			this.button_order.Click += new System.EventHandler(this.button_order_Click);
 			// 
 			// flowLayoutPanel2
 			// 
 			this.flowLayoutPanel2.Location = new System.Drawing.Point(344, 47);
 			this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-			this.flowLayoutPanel2.Size = new System.Drawing.Size(347, 122);
+			this.flowLayoutPanel2.Size = new System.Drawing.Size(347, 158);
 			this.flowLayoutPanel2.TabIndex = 10;
 			// 
 			// flowLayoutPanel1
 			// 
 			this.flowLayoutPanel1.Location = new System.Drawing.Point(18, 47);
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-			this.flowLayoutPanel1.Size = new System.Drawing.Size(320, 122);
+			this.flowLayoutPanel1.Size = new System.Drawing.Size(320, 158);
 			this.flowLayoutPanel1.TabIndex = 9;
 			// 
 			// button_order_search
@@ -194,16 +204,6 @@
 			this.메뉴관리ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
 			this.메뉴관리ToolStripMenuItem.Text = "메뉴관리";
 			this.메뉴관리ToolStripMenuItem.Click += new System.EventHandler(this.메뉴관리ToolStripMenuItem_Click);
-			// 
-			// button_order
-			// 
-			this.button_order.Location = new System.Drawing.Point(616, 18);
-			this.button_order.Name = "button_order";
-			this.button_order.Size = new System.Drawing.Size(75, 23);
-			this.button_order.TabIndex = 11;
-			this.button_order.Text = "주문하기";
-			this.button_order.UseVisualStyleBackColor = true;
-			this.button_order.Click += new System.EventHandler(this.button_order_Click);
 			// 
 			// MainForm
 			// 

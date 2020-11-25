@@ -45,6 +45,7 @@ namespace coffershop1
 			dtChanges = dtProcessFlag.GetChanges(DataRowState.Modified);
 
 			DBManager.GetInstance().order_Modify(dtChanges, id, time_value);
+			DBManager.GetInstance().order_Log(dtChanges, id, time_value, "수정");
 
 			show_Log();
 
@@ -70,6 +71,7 @@ namespace coffershop1
 			dtChanges = dtProcessFlag.GetChanges(DataRowState.Modified);
 
 			DBManager.GetInstance().order_Modify(dtChanges, id, time_value);
+			DBManager.GetInstance().order_Log(dtChanges, id, time_value, "취소");
 
 			show_Log();
 

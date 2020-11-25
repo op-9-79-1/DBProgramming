@@ -46,6 +46,16 @@ namespace coffershop1
 				MySqlCommand cmd = new MySqlCommand(update_query, conn);
 				cmd.ExecuteNonQuery();
 
+				update_query = @"insert into order_set_log(order_sid, contents, detail_contents) values (#sid, '#contents', '#detail')";
+				update_query = update_query.Replace("#sid", "(select max(sid) from order_list)");
+				update_query = update_query.Replace("#contents", "추가");
+				update_query = update_query.Replace("#detail", "시간 : #time");
+				update_query = update_query.Replace("#time", time);
+
+
+				cmd = new MySqlCommand(update_query, conn);
+				cmd.ExecuteNonQuery();
+
 				conn.Close();
 			}
 		}
@@ -460,6 +470,54 @@ namespace coffershop1
 			DataSet ds = new DataSet();
 			adapter.Fill(ds);
 			return ds;
+		}
+
+		public void coffee_Log(DataTable table, string cont)
+		{
+			using (MySqlConnection conn = new MySqlConnection(connection_string))
+			{
+				conn.Open();
+
+				while (table.Rows.Count != 0)
+				{
+					update_query = @"insert into menu_log(coffee_sid, contents, detail_contents) values ((select id from coffee where name = '#sid'), '#contents', '#detail')";
+					update_query = update_query.Replace("#sid", table.Rows[0][0].ToString());
+					update_query = update_query.Replace("#contents", cont);
+
+					update_query = update_query.Replace("#detail", "이름 : #name 가격 : #price");
+					update_query = update_query.Replace("#name", table.Rows[0][0].ToString());
+					update_query = update_query.Replace("#price", table.Rows[0][1].ToString());
+
+					MySqlCommand cmd = new MySqlCommand(update_query, conn);
+					cmd.ExecuteNonQuery();
+
+					table.Rows.RemoveAt(0);
+				}
+			}
+		}
+
+		public void order_Log(DataTable table, string id, string time, string cont)
+		{
+			using (MySqlConnection conn = new MySqlConnection(connection_string))
+			{
+				conn.Open();
+
+				while (table.Rows.Count != 0)
+				{
+					update_query = @"insert into order_set_log(order_sid, contents, detail_contents) values ('#sid', '#contents', '#detail')";
+					update_query = update_query.Replace("#sid", table.Rows[0][0].ToString());
+					update_query = update_query.Replace("#contents", cont);
+
+					update_query = update_query.Replace("#detail", "시간 : #time 상태 : #state");
+					update_query = update_query.Replace("#time", table.Rows[0][1].ToString());
+					update_query = update_query.Replace("#state", table.Rows[0][3].ToString());
+
+					MySqlCommand cmd = new MySqlCommand(update_query, conn);
+					cmd.ExecuteNonQuery();
+
+					table.Rows.RemoveAt(0);
+				}
+			}
 		}
 	}
 }

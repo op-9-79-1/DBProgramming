@@ -29,6 +29,7 @@ namespace coffershop1
 			dtChanges = dtProcessFlag.GetChanges(DataRowState.Modified);
 
 			DBManager.GetInstance().coffee_Modify(dtChanges);
+			DBManager.GetInstance().coffee_Log(dtChanges, "수정");
 
 			MM_Load();
 
@@ -45,6 +46,7 @@ namespace coffershop1
 			dtChanges = dtProcessFlag.GetChanges(DataRowState.Added);
 
 			DBManager.GetInstance().coffee_Modify(dtChanges);
+			DBManager.GetInstance().coffee_Log(dtChanges, "추가");
 
 			MM_Load();
 
