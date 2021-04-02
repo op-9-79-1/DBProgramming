@@ -112,6 +112,12 @@
     <Compile Include="MenuManager.Designer.cs">
       <DependentUpon>MenuManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAccountForm.Designer.cs">
+      <DependentUpon>NewAccountForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrderSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,12 @@
     <Compile Include="UserLog.Designer.cs">
       <DependentUpon>UserLog.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserManager.Designer.cs">
+      <DependentUpon>UserManager.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuManager.resx">
       <DependentUpon>MenuManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAccountForm.resx">
+      <DependentUpon>NewAccountForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrderSearch.resx">
       <DependentUpon>OrderSearch.cs</DependentUpon>
@@ -149,6 +164,9 @@
     </Compile>
     <EmbeddedResource Include="UserLog.resx">
       <DependentUpon>UserLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserManager.resx">
+      <DependentUpon>UserManager.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

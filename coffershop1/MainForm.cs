@@ -93,6 +93,11 @@ namespace coffershop1
 			MenuManager menuManager = new MenuManager();
 			menuManager.Show();
 		}
+		private void 사용자관리ToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			UserManager userManager = new UserManager();
+			userManager.Show();
+		}
 
 		private void button_order_search_Click(object sender, EventArgs e)
 		{

@@ -37,3 +37,5 @@ D:\capstone\DBprogramming\coffershop1\obj\Debug\coffershop1.LoginForm.resources
 D:\capstone\DBprogramming\coffershop1\obj\Debug\coffershop1.UserLog.resources
 D:\capstone\DBprogramming\coffershop1\obj\Debug\coffershop1.MenuManager.resources
 D:\capstone\DBprogramming\coffershop1\obj\Debug\coffershop1.OrderSearch.resources
+D:\capstone\DBprogramming\coffershop1\obj\Debug\coffershop1.NewAccountForm.resources
+D:\capstone\DBprogramming\coffershop1\obj\Debug\coffershop1.UserManager.resources

@@ -33,11 +33,12 @@
 			this.textBoxPW = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.textBoxID = new System.Windows.Forms.TextBox();
+			this.button_newaccount = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// buttonLogin
 			// 
-			this.buttonLogin.Location = new System.Drawing.Point(171, 177);
+			this.buttonLogin.Location = new System.Drawing.Point(112, 177);
 			this.buttonLogin.Name = "buttonLogin";
 			this.buttonLogin.Size = new System.Drawing.Size(75, 23);
 			this.buttonLogin.TabIndex = 13;
@@ -77,11 +78,22 @@
 			this.textBoxID.Size = new System.Drawing.Size(116, 21);
 			this.textBoxID.TabIndex = 9;
 			// 
+			// button_newaccount
+			// 
+			this.button_newaccount.Location = new System.Drawing.Point(195, 177);
+			this.button_newaccount.Name = "button_newaccount";
+			this.button_newaccount.Size = new System.Drawing.Size(75, 23);
+			this.button_newaccount.TabIndex = 14;
+			this.button_newaccount.Text = "유저 등록";
+			this.button_newaccount.UseVisualStyleBackColor = true;
+			this.button_newaccount.Click += new System.EventHandler(this.button_newaccount_Click);
+			// 
 			// LoginForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(429, 321);
+			this.Controls.Add(this.button_newaccount);
 			this.Controls.Add(this.buttonLogin);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.textBoxPW);
@@ -102,5 +114,6 @@
 		private System.Windows.Forms.TextBox textBoxPW;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TextBox textBoxID;
+		private System.Windows.Forms.Button button_newaccount;
 	}
 }

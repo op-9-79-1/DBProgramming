@@ -21,6 +21,11 @@ namespace coffershop1
 
 				la = DBManager.GetInstance().Login(textBoxID.Text, textBoxPW.Text);
 
+				if (la == null)
+				{
+					this.Cursor = Cursors.Default;
+					return;
+				}
 				if(la.master.Equals("0"))
 				DBManager.GetInstance().Login_Log(la);
 
@@ -42,6 +47,12 @@ namespace coffershop1
 		private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
 		{
 			System.Diagnostics.Process.GetCurrentProcess().Kill();
+		}
+
+		private void button_newaccount_Click(object sender, EventArgs e)
+		{
+			NewAccountForm naf = new NewAccountForm();
+			naf.Show();
 		}
 	}
 }

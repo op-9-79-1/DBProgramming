@@ -59,13 +59,27 @@ namespace coffershop1
 				conn.Close();
 			}
 		}
+
+		internal void user_Modify(DataTable dtChanges)
+		{
+			MySqlConnection conn = new MySqlConnection(connection_string);
+
+			update_query = "select name as '이름', uid as 'ID', password as '비밀번호', acc_state as '상태' from account";
+			MySqlDataAdapter adapter = new MySqlDataAdapter();
+			adapter.SelectCommand = new MySqlCommand(update_query, conn);
+			MySqlCommandBuilder builder = new MySqlCommandBuilder(adapter);
+
+			adapter.UpdateCommand = builder.GetUpdateCommand();
+			adapter.Update(dtChanges);
+		}
+
 		public LoginAccount Login(string id, string pw)
 		{
 			using (MySqlConnection conn = new MySqlConnection(connection_string))
 			{
 				conn.Open();
 
-				update_query = @"select id, name, master from account where uid = '#id' && password = '#pw'";
+				update_query = @"select id, name, master,acc_state from account where uid = '#id' && password = '#pw'";
 				update_query = update_query.Replace("#id", id);
 				update_query = update_query.Replace("#pw", pw);
 
@@ -73,6 +87,17 @@ namespace coffershop1
 				MySqlDataReader rdr = cmd.ExecuteReader();
 
 				rdr.Read();
+
+				if (rdr["acc_state"].Equals("제한"))
+				{
+					MessageBox.Show("제한되었습니다", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					return null;
+				}
+				else if(rdr["acc_state"].Equals("대기"))
+				{
+					MessageBox.Show("가입대기중입니다.", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					return null;
+				}
 
 				LoginAccount la = new LoginAccount(rdr["id"].ToString(), rdr["name"].ToString(), rdr["master"].ToString());
 
@@ -518,6 +543,34 @@ namespace coffershop1
 					table.Rows.RemoveAt(0);
 				}
 			}
+		}
+
+		public void new_account(string name, string id, string password)
+		{
+			using (MySqlConnection conn = new MySqlConnection(connection_string))
+			{
+				conn.Open();
+
+				update_query = @"insert into account(name, uid, password, master, acc_state) values ('#name', '#id', '#password', 0, '대기')";
+				update_query = update_query.Replace("#name", name);
+				update_query = update_query.Replace("#id", id);
+				update_query = update_query.Replace("#password", password);
+
+				MySqlCommand cmd = new MySqlCommand(update_query, conn);
+				cmd.ExecuteNonQuery();
+
+			}
+		}
+
+		public DataSet user_select()
+		{
+			MySqlConnection conn = new MySqlConnection(connection_string);
+
+			update_query = "select name as '이름', uid as 'ID', password as '비밀번호', acc_state as '상태' from account";
+			MySqlDataAdapter adapter = new MySqlDataAdapter(update_query, conn);
+			DataSet ds = new DataSet();
+			adapter.Fill(ds);
+			return ds;
 		}
 	}
 }

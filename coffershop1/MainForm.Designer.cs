@@ -45,6 +45,7 @@
 			this.관ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.사용자로그ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.메뉴관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.사용자관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView_master)).BeginInit();
 			this.menuStrip1.SuspendLayout();
@@ -186,7 +187,8 @@
 			// 
 			this.관ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.사용자로그ToolStripMenuItem,
-            this.메뉴관리ToolStripMenuItem});
+            this.메뉴관리ToolStripMenuItem,
+			this.사용자관리ToolStripMenuItem});
 			this.관ToolStripMenuItem.Name = "관ToolStripMenuItem";
 			this.관ToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
 			this.관ToolStripMenuItem.Text = "관리자";
@@ -204,6 +206,11 @@
 			this.메뉴관리ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
 			this.메뉴관리ToolStripMenuItem.Text = "메뉴관리";
 			this.메뉴관리ToolStripMenuItem.Click += new System.EventHandler(this.메뉴관리ToolStripMenuItem_Click);
+
+			this.사용자관리ToolStripMenuItem.Name = "사용자관리ToolStripMenuItem";
+			this.사용자관리ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+			this.사용자관리ToolStripMenuItem.Text = "사용자관리";
+			this.사용자관리ToolStripMenuItem.Click += new System.EventHandler(this.사용자관리ToolStripMenuItem_Click);
 			// 
 			// MainForm
 			// 
@@ -239,6 +246,7 @@
 		private System.Windows.Forms.ToolStripMenuItem 관ToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem 사용자로그ToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem 메뉴관리ToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem 사용자관리ToolStripMenuItem;
 		private System.Windows.Forms.Button button_order_search;
 		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
 		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
